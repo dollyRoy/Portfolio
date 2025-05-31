@@ -1,0 +1,595 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: #fff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+body.dark-theme .navbar {
+    background: #2a2a2a;
+}
+
+.navbar .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+body.dark-theme .navbar a {
+    color: #e0e0e0;
+}
+
+.navbar a:hover {
+    color: #007bff;
+}
+
+.theme-toggle {
+    background: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: #0056b3;
+}
+
+body.dark-theme .theme-toggle {
+    background: #4da8ff;
+}
+
+body.dark-theme .theme-toggle:hover {
+    background: #80bfff;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.header-left {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.header-left h1 {
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.header-left p {
+    font-size: 1.4em;
+    color: #666;
+    font-weight: 400;
+    text-align: center;
+}
+
+body.dark-theme .header-left p {
+    color: #aaa;
+}
+
+.header-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Common Section Styling (except Projects) */
+.section-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+body.dark-theme .section-card {
+    background: #2a2a2a;
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+}
+
+.section-card h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* About Me Section */
+.about p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    text-align: center;
+}
+
+body.dark-theme .about p {
+    color: #ccc;
+}
+
+/* Skills Section */
+.skills ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skills li {
+    font-size: 1.1em;
+    color: #333;
+    padding: 10px 20px;
+    background: #e9ecef;
+    border-radius: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme .skills li {
+    color: #e0e0e0;
+    background: #444;
+}
+
+/* Projects Section (unchanged) */
+.projects {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+    width: 250px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+}
+
+body.dark-theme .project-card {
+    background: #2a2a2a;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 15px;
+    font-size: 1.2em;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Contact Section */
+.contact ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+body.dark-theme .contact a {
+    color: #4da8ff;
+}
+
+.contact a:hover {
+    color: #0056b3;
+}
+
+body.dark-theme .contact a:hover {
+    color: #80bfff;
+}
+
+.contact svg {
+    width: 24px;
+    height: 24px;
+    fill: #333;
+}
+
+body.dark-theme .contact svg {
+    fill: #e0e0e0;
+}
+
+/* Social Media Section */
+.social-media ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media a {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.social-media a:hover {
+    transform: scale(1.2);
+}
+
+.social-media i {
+    font-size: 32px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+body.dark-theme .social-media i {
+    color: #e0e0e0;
+}
+
+/* Chat Bubble */
+.chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-bubble img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Chatbot Overlay */
+.chat-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-window {
+    background: #fff;
+    width: 90%;
+    max-width: 400px;
+    height: 70vh;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease;
+}
+
+body.dark-theme .chat-window {
+    background: #2a2a2a;
+}
+
+.chat-header {
+    background: #007bff;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f8f9fa;
+    transition: background 0.3s ease;
+}
+
+body.dark-theme .chat-body {
+    background: #333;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 70%;
+}
+
+.user-message {
+    background: #007bff;
+    color: #fff;
+    margin-left: auto;
+}
+
+.bot-message {
+    background: #e9ecef;
+    color: #333;
+}
+
+body.dark-theme .bot-message {
+    background: #444;
+    color: #e0e0e0;
+}
+
+.typing-indicator {
+    display: none;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    max-width: 70%;
+}
+
+.typing-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #333;
+    border-radius: 50%;
+    margin-right: 4px;
+    animation: typing 0.8s infinite;
+}
+
+body.dark-theme .typing-indicator span {
+    background-color: #e0e0e0;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+}
+
+.chat-footer {
+    padding: 10px;
+    background: #fff;
+    display: flex;
+    gap: 10px;
+    transition: background 0.3s ease;
+}
+
+body.dark-theme .chat-footer {
+    background: #2a2a2a;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-theme .chat-footer input {
+    background: #333;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+.chat-footer button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .header-left {
+        flex: none;
+    }
+
+    .header-right {
+        width: 100%;
+        align-items: center;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar a {
+        font-size: 1em;
+    }
+
+    .theme-toggle {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+
+    .header-left h1 {
+        font-size: 2em;
+    }
+
+    .header-left p {
+        font-size: 1.2em;
+    }
+
+    .section-card {
+        margin: 0 20px;
+        padding: 20px;
+    }
+
+    .section-card h2 {
+        font-size: 1.5em;
+    }
+
+    .about p {
+        font-size: 1em;
+    }
+
+    .skills ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .projects {
+        margin: 0 20px;
+    }
+
+    .project-card {
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
+
+    .contact ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-media ul {
+        gap: 15px;
+    }
+
+    .chat-window {
+        width: 95%;
+        height: 80vh;
+    }
+}
+
+/* Fallback for broken images */
+img {
+    background-color: #ddd;
+
+}
